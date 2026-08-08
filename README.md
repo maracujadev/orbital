@@ -3,6 +3,8 @@
 The goal of this code is to create simulations of a body orbiting in a 2-dimensional plane. The curve is approximated using a simple Euler Integration and creates gifs / live windows.
 All the calculations are done using the language Julia and a mere single package (Plots.jl). The script contains several debugging scripts as comments.  
 
+![til](orbit.gif)
+
 ## Packages
 
 Plots.jl
