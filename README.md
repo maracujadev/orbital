@@ -7,9 +7,15 @@ All the calculations are done using the language Julia and a mere single package
 
 ## Packages
 
-Plots.jl
-
-(PlotThemes.jl optionally)
+```_
+   _       _ _(_)_     |  
+  (_)     | (_) (_)    |    Plots.jl
+   _ _   _| |_  __ _   |  
+  | | | | | | |/ _` |  |    (PlotThemes.jl)
+  | | |_| | | | (_| |  |  
+ _/ |\__'_|_|_|\__'_|  |  
+|__/                   |
+```
 
 ## Physics
 
