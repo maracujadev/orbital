@@ -2,12 +2,6 @@
 using Plots
 theme(:dark)
 
-#= notes on the units used in these calculations
-G is in m³/(kg*s²)
-positions are always in m
-masses are always in kg
-=#
-
 ### celestial body
 star = [0.0, 0.0]
 star_mass = 1.989e30 #kilograms
@@ -22,7 +16,6 @@ a = [0.0, 0.0]
 ### universal const
 G = 6.67428*10^(-11)
 dt = 1.0*10^5
-
 
 ### loop creating the animation
 anim = @animate for step in 1:2000
