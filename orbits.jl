@@ -14,33 +14,33 @@ a = [0.0, 0.0] #acceleration in meters/seconds^2
 # note the mass is irrelevant as it cancels out
 
 ### universal const
-G = 6.67428*10^(-11) #gravitational constant in m^3/(kg*s^2)
+G = 6.67428e-11 #gravitational constant in m^3/(kg*s^2)
 dt = 1.0*10^5
 
 GM = G * star_mass
 
+function orbit_update(p, v, GM, dt)
+  diff = star .- p
+  r = sqrt(diff[1]^2 + diff[2]^2)
+  a = GM .* diff ./ r^3
+  new_v = v .+ a .* dt
+  new_p = p .+ new_v .* dt
+  return new_v, new_p
+end
+
 ### loop creating the animation
 anim = @animate for step in 1:2000
 	global p, v, a
-	# computation algorithm here
-  diff = star .- p
-  r = sqrt(diff[1]^2 + diff[2]^2)
-	a = GM .* diff ./ r^3
-
-	v .= v .+ a .* dt
-
-	p .= p .+ v .* dt
+  v, p = orbit_update(p, v, GM, dt)
 
 	scatter([star[1]], [star[2]], xlims=(-2.5e11, 2.5e11), ylims=(-2.5e11, 2.5e11), label="Star")
 	scatter!([p[1]], [p[2]], label="Planet")
-	#= 
-	if step % 100 == 0
+	#=if step % 100 == 0
     	println(step, ": ", p, " r=", r)
-	end
-	=#
+	end=#
 end
 
-gif(anim, "orbit.gif", fps=30)
+gif(anim, "orbit2.gif", fps=30)
 
 ### Debugging tools
 
