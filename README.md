@@ -58,4 +58,4 @@ Across the entire script, we shall assume lengths to be in meters, times to be i
 A given constant is 
 
 
-$$G=6.67428*10^{-12} \frac{m^3}{kg\cdot s^2}$$
+$$G=6.67428*10^{-11} \frac{m^3}{kg\cdot s^2}$$
